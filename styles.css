@@ -1,0 +1,93 @@
+body {
+    text-align: center;
+    font-family: "Press Start 2P", serif;
+    background-color: rgb(252, 192, 255);
+    color: red;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 36px;
+    text-shadow: 2px 2px 5px white;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.btn {
+    background: red;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-family: "Press Start 2P", serif;
+
+}
+
+.input-field {
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+    border: 2px solid red;
+}
+
+.error {
+    color: red;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid red;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.popup h2 {
+    color: green;
+}
+
+input {
+    background-color: rgb(253, 180, 255);
+    outline: none;
+    font-family: "Press Start 2P", serif;
+
+}
+
+input::placeholder {
+    color: red;
+    opacity: 0.5;
+}
+
+.heart-fall {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background-image: url('./img/heart.png');
+    background-size: 106%;
+    animation: fall 3s linear infinite;
+}
+.audio-player {
+    margin-top: 20px;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    
+}
