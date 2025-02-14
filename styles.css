@@ -1,13 +1,15 @@
 body {
     text-align: center;
     font-family: "Press Start 2P", serif;
+    font-size: 23px;
+    line-height: 28px;
     background-color: rgb(252, 192, 255);
     color: red;
     overflow: hidden;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 46px;
     text-shadow: 2px 2px 5px white;
 }
 
@@ -16,6 +18,9 @@ h1 {
 }
 
 .btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
     background: red;
     padding: 10px 20px;
     font-size: 20px;
@@ -40,19 +45,27 @@ h1 {
 .popup {
     display: none;
     position: fixed;
+    width: 70%;
+    height: 85%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
-    border: 2px solid red;
+    border: 5px solid ;
     padding: 20px;
     text-align: center;
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+
 .popup h2 {
-    color: green;
+    color: rgb(192, 14, 192);
+    line-height: 30px;
+    font-size: 30px;
+}
+.popup video {
+    width: auto;
+    height: 40%;
 }
 
 input {
@@ -72,8 +85,9 @@ input::placeholder {
     width: 80px;
     height: 80px;
     background-image: url('./img/heart.png');
-    background-size: 106%;
+    background-size: cover;
     animation: fall 3s linear infinite;
+    z-index: 9999;
 }
 .audio-player {
     margin-top: 20px;
@@ -91,3 +105,86 @@ input::placeholder {
     }
     
 }
+.parrot-video {
+    width: 300px;
+    height: auto;
+}
+
+.heart-button {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    clip-path: path('M 75 30 C 95 0, 150 0, 150 50 C 150 100, 75 140, 75 140 C 75 140, 0 100, 0 50 C 0 0, 55 0, 75 30 Z');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  } 
+  .heart-button span {
+    position: absolute;
+    transform: translateY(0);  
+    z-index: 1;  
+    font-family: "Press Start 2P", serif;
+    font-size: 14px
+    /*color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase; */
+  }
+
+  .heart-button:before,
+  .heart-button:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    top: -50px;
+    left: 0;
+  }
+
+  .heart-button:after {
+    top: 0;
+    left: -50px;
+  }
+    /* #loader-container {
+    display: none;
+}
+
+
+#loader-container.show {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.loader-container img {
+    width: 200px;
+    height: auto;
+    animation: spin 6s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+} */

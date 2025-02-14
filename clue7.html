@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+
+    <title>Квест для коханого 💖 - Підказка 7</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>💖 Підказка 7 💖</h1>
+        <p>Що нас зблизило на початках?</p>
+        <input type="text" id="answer" class="input-field" placeholder="Введи відповідь..." />
+        <button class="btn" onclick="checkAnswer()">?</button>
+        <p id="error" class="error"></p>
+    </div>
+
+    <div class="popup" id="popup">
+        <h2>Уііііііі</h2>
+        <p>Ніколи не забуду, як вперше побачила, як ти виглядаєш без футболки, а потім як вперше полапала тебе. Хочу
+            павтаріть і асвєжить! Ввечері тебе чекає масажик під туфіта 💋</p>
+        <video class="massage-video" loop autoplay>
+            <source src="./video/ross-massage.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <audio id="whisper" src="./audio/George Michael - Careless Whisper.mp3"></audio>
+        <audio id="sorry" src="./audio/nothing-but-thieves-sorry.mp3"></audio>
+
+        <button class="btn" onclick="goToNextPage()">ФіналОчка</button>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.trim().toLowerCase();
+            const error = document.getElementById('error');
+            const popup = document.getElementById('popup');
+
+            const audioWhisper = document.getElementById('whisper');
+            const audioSorry = document.getElementById('sorry');
+
+            if (answer === 'масаж' || answer === 'хтивість' || answer === 'наша сексуальність' || answer === 'прогулянка' || answer === 'секс') {
+                error.textContent = '';
+                popup.style.display = 'block';
+                audioSorry.pause()
+                audioWhisper.play()
+                createHearts();
+            } else {
+                audioSorry.play()
+                error.textContent = `${'Холодно 🥶'}`;
+            }
+
+
+
+
+        }
+
+        function goToNextPage() {
+            window.location.href = 'finalOchka.html';
+        }
+
+        function createHearts() {
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-fall';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = 2 + Math.random() * 3 + 's';
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1000000);
+            }
+        }
+    </script>
+</body>
+
+</html>

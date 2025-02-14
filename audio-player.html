@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        iframe {
+            display: none;
+            /* Hidden iframe for persistent audio */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Player</h1>
+    <audio id="whisper" preload="auto" loop>
+        <source src="./audio/George Michael - Careless Whisper.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        window.onload = function () {
+            const audio = document.getElementById("whisper");
+            const audioState = sessionStorage.getItem("audioState");
+
+            // Check if audio was previously playing
+            if (audioState === 'playing') {
+                audio.play();
+            }
+        }
+
+        // Listen for page unload to save the audio state
+        window.addEventListener("beforeunload", function () {
+            const audio = document.getElementById("whisper");
+            if (!audio.paused) {
+                sessionStorage.setItem("audioState", "playing");
+            } else {
+                sessionStorage.setItem("audioState", "paused");
+            }
+        });    
+    </script>
+</body>
+
+</html>

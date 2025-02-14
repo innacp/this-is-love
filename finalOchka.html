@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+
+    <title>Квест для коханого 💖 - ФіналОчка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <video class="snow-video" loop autoplay>
+            <source src="./video/rain.mov" type="video/mp4">
+        </video>
+        <video class="rain-video" loop autoplay>
+            <source src="./video/snow.mp4" type="video/mp4">
+        </video>
+        <div id="loader-container" class="loader-container">
+            <img src="./img/kiss.gif" alt="spinning-dog-loader">
+        </div>
+        <div id="loader-container" class="loader-container">
+            <img src="./img/disco-heart.gif" alt="spinning-dog-loader">
+        </div>
+        <div id="loader-container" class="loader-container">
+            <img src="./img/kiss.gif" alt="spinning-dog-loader">
+        </div>
+        <div id="loader-container" class="loader-container">
+            <img src="./img/kiss.gif" alt="spinning-dog-loader">
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+
+        function createHearts() {
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-fall';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = 2 + Math.random() * 3 + 's';
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1000000);
+            }
+        }
+    </script>
+</body>
+
+</html>

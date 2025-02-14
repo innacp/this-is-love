@@ -25,9 +25,15 @@
     </div>
 
     <div class="popup" id="popup">
-        <h2>Єєєєй! Ти справився! 🎉</h2>
-        <p>Підказка: шукай подарунок у найхолоднішому місці</p>
-        <button class="btn" onclick="goToNextPage()">Я знайшов!</button>
+        <h2>Єєєєй! <br /> Ти справився! 🎉</h2>
+        <p>Тебе чекає перерва на смаколики 🥐</p>
+        <video class="parrot-video" loop autoplay>
+            <source src="./video/parrot.webm" type="video/WEBM">
+            Your browser does not support the video tag.
+        </video>
+        <audio id="whisper" src="./audio/George Michael - Careless Whisper.mp3"></audio>
+        <audio id="sorry" src="./audio/nothing-but-thieves-sorry.mp3"></audio>
+        <button class="btn" onclick="goToNextPage()">Хочу ще!</button>
     </div>
 
     <script>
@@ -35,13 +41,18 @@
             const answer = document.getElementById('answer').value.trim().toLowerCase();
             const error = document.getElementById('error');
             const popup = document.getElementById('popup');
+            const audioWhisper = document.getElementById('whisper');
+            const audioSorry = document.getElementById('sorry');
 
-            if (answer === 'круасани') {
+            if (answer === 'круасани з шоколадом') {
                 error.textContent = '';
                 popup.style.display = 'block';
+                audioSorry.pause()
+                audioWhisper.play()
                 createHearts();
             } else {
-                error.textContent = 'Неправильно🫢 Спробуй ще раз 💋';
+                audioSorry.play()
+                error.textContent = `${'НЕ-ПРА-ВИЛЬ-НО 🫢 Спробуй ще раз 💋'}`;
             }
         }
 
@@ -62,7 +73,13 @@
                 }, 1000000);
             }
         }
+        function nextClue() {
+            window.location.href = 'clue2.html';  // Redirect to next clue
+        }
     </script>
+
+
+
 </body>
 
 </html>
