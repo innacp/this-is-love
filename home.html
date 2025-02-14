@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <title>Веб-вікторина для Андрійчика 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "Press Start 2P", serif;
+            background-color: rgb(252, 192, 255);
+            color: red;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 5px white;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .btn {
+            background: red;
+            font-family: "Press Start 2P", serif;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: 2px solid red;
+            cursor: pointer;
+            color: white;
+            height: 560px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="loader-container" class="loader-container">
+            <img src="img/loader.png" alt="spinning-dog-loader">
+        </div>
+        <img src="./img/hpheart.gif" alt="">
+
+    </div>
+
+    <h1>💖 КОХАНИЙ МІЙ! 💖</h1>
+    <p>Це твоя романтична веб подорож. <br> Сьогодні хочу, щоб ми разом поринули у спогади і трошки повеселились.
+        <br>
+        Кожен подарунок пов’язаний з моментами, які ми прожили разом протягом цього року. Сподіваюся, тобі
+        сподобається
+        ❤️✨ <br> Отримай цьомик і тисни кнопку, щоб почати!
+    </p>
+    <button class="btn" onclick="nextPage()">ЦЬОМИК</button>
+    </div>
+    <script>
+        function nextPage() {
+            window.location.href = 'clue1.html';  // Redirect to next clue
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -13,26 +13,124 @@
     <title>Квест для коханого 💖 - ФіналОчка</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    h1 {
+        font-size: 40px;
+        line-height: 26px;
+        color: rgb(204, 22, 204);
+        text-shadow: 2px 2px 5px white;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 26px;
+    }
+
+    .gif {
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    video {
+        position: fixed;
+        max-height: 400px;
+        z-index: 1;
+        border: 3px solid rgb(204, 22, 204);
+
+    }
+
+    .snow-video {
+        top: 60%;
+        left: 10px;
+    }
+
+    .rain-video {
+        top: 60%;
+        right: 10px;
+    }
+
+    .image-container {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+    .text-container {
+        margin-bottom: 200px;
+    }
+
+    .banner {
+        position: fixed;
+        top: 0;
+        height: auto;
+        width: 100%;
+        z-index: 10000;
+        background-color: white;
+        display: block;
+    }
+
+    body {
+        padding-top: 50px;
+        /* Added padding to prevent overlap */
+    }
+</style>
 
 <body>
+    <img class="banner" src="./img/banner.gif" alt="" onerror="console.error('Banner failed to load')">
+
+    <div class="text-container">
+        <h1>Мій солодкий пиріжечок 🌭</h1>
+        <p>Я тебе дуже люблю і ціную. Я дуже рада, що ми з тобою знайшли і відкрили один одного з різних сторін 😏 і не
+            побоялися відкритися. Мені з тобою дуже тепло, комфортно, спокійно і радісно. Дякую тобі за те, що ти такий
+            є і
+            ти робиш мене щасливою. Люблю тебе безмежно. Ти найкращий ❤️‍🔥</p>
+    </div>
     <div class="container">
-        <video class="snow-video" loop autoplay>
-            <source src="./video/rain.mov" type="video/mp4">
-        </video>
-        <video class="rain-video" loop autoplay>
-            <source src="./video/snow.mp4" type="video/mp4">
-        </video>
-        <div id="loader-container" class="loader-container">
-            <img src="./img/kiss.gif" alt="spinning-dog-loader">
+
+        <div class="video-container">
+
+            <video class="snow-video" loop autoplay>
+                <source src="./video/rain.mov" type="video/mp4">
+            </video>
+            <video class="rain-video" loop autoplay>
+                <source src="./video/snow.mp4" type="video/mp4">
+            </video>
         </div>
-        <div id="loader-container" class="loader-container">
-            <img src="./img/disco-heart.gif" alt="spinning-dog-loader">
-        </div>
-        <div id="loader-container" class="loader-container">
-            <img src="./img/kiss.gif" alt="spinning-dog-loader">
-        </div>
-        <div id="loader-container" class="loader-container">
-            <img src="./img/kiss.gif" alt="spinning-dog-loader">
+        <div class="image-container">
+            <div class="img-container">
+                <img class="gif" src="./img/kiss.gif" alt="">
+            </div>
+            <div class="img-container">
+                <img class="gif" src="./img/disco-heart.gif" alt="">
+            </div>
+            <div class="img-container">
+                <img class="gif" src="./img/heart-glittery.gif" alt="">
+            </div>
+            <div class="img-container">
+                <img class="gif" src="./img/cat-throwing.gif" alt="">
+            </div>
+            <divimgi class="img-container">
+                <img class="gif" src="./img/glitter.gif" alt="">
+            </divimgi>
+            <div class="img-container">
+                <img class="gif" src="./img/lighter.webp" alt="">
+            </div>
+            <div class="img-container">
+                <img class="gif" src="./img/flamevl.gif" alt="">
+            </div>
+            <div class="img-container">
+                <img class="gif" src="./img/gatuwu.gif" alt="">
+            </div>
+            <div class="img-container">
+                <img class="gif"
+                    src="./img/thank-you-so-much-love-from-bottom-of-my-heart-petjuvenate-gif-appreciated-appreciate-you-huge-thanks-dog-mom-pj-hooman.gif"
+                    alt="">
+            </div>
         </div>
 
 
@@ -41,20 +139,13 @@
     </div>
 
     <script>
-
-        function createHearts() {
-            for (let i = 0; i < 30; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart-fall';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.animationDuration = 2 + Math.random() * 3 + 's';
-                document.body.appendChild(heart);
-
-                setTimeout(() => {
-                    heart.remove();
-                }, 1000000);
-            }
-        }
+        document.querySelectorAll('img:not(.banner)').forEach(element => {
+            const margin = 100;
+            const randomTop = margin + Math.random() * (document.documentElement.scrollHeight - element.clientHeight - 2 * margin);
+            const randomLeft = margin + Math.random() * (document.documentElement.scrollWidth - element.clientWidth - 2 * margin);
+            element.style.top = `${randomTop}px`;
+            element.style.left = `${randomLeft}px`;
+        });
     </script>
 </body>
 

@@ -1,11 +1,11 @@
 body {
+    overflow-y: scroll; 
     text-align: center;
     font-family: "Press Start 2P", serif;
     font-size: 23px;
     line-height: 28px;
     background-color: rgb(252, 192, 255);
     color: red;
-    overflow: hidden;
 }
 
 h1 {
@@ -34,8 +34,9 @@ h1 {
 .input-field {
     padding: 10px;
     font-size: 18px;
+    color: rgb(38, 0, 255);
     margin-top: 20px;
-    border: 2px solid red;
+    border: 5px solid red;
 }
 
 .error {
